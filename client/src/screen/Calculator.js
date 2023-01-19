@@ -4,7 +4,8 @@ import { useState } from 'react';
 
 export default function Calculator() {
   const [result, setResult] = useState("")
-  const buttonOnClick = (text) => {    
+  const buttonOnClick = (text) => {
+    console.log("🚀 ~ buttonOnClick ~ text", text)
     setResult(result + text)
     if (text == "C") {
       setResult("")
@@ -14,8 +15,9 @@ export default function Calculator() {
       } catch {
         setResult("error")
       }
-    } else if(text = "D"){
-      setResult(pembilang(result))
+    }
+    if (text == "D") {
+      setResult(pembilang(parseInt(result)))
     }
   }
   return (
